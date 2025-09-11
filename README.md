@@ -21,3 +21,15 @@
 
 ## 📖 1. Giới thiệu hệ thống
 Hệ thống có các chức năng hihi haha
+
+## 📖 2. Công nghệ sử dụng
+Hệ thống có các chức năng hihi haha
+
+## 📖 3. Một số hình ảnh hệ thống
+Hệ thống có các chức năng hihi haha
+
+## 📖 4. Các bước cài đặt
+Hệ thống có các chức năng hihi haha
+
+## 📖 5. Liên hệ
+Hệ thống có các chức năng hihi haha
