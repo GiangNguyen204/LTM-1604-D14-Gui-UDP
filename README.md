@@ -44,8 +44,7 @@
 
 ---
 
-## 📖 3. Một số hình ảnh hệ thống
-👉 *(Bạn thay link ảnh thực tế sau khi chạy ứng dụng)*  
+## 📖 3. Một số hình ảnh hệ thống 
 
 - **Giao diện chính ứng dụng**  
   ![UI Screenshot](docs/ui_main.png)  
