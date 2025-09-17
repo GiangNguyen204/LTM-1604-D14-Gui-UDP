@@ -47,13 +47,16 @@
 ## 📖 3. Một số hình ảnh hệ thống 
 
 - **Giao diện chính ứng dụng**  
-  ![UI Screenshot](docs/ui_main.png)  
+  <img width="1387" height="819" alt="image" src="https://github.com/user-attachments/assets/ce78f8ff-ea3c-49ab-9305-12ced8e4799e" />
+
 
 - **Chế độ Auto Send + Log hiển thị**  
-  ![Auto Send Screenshot](docs/ui_autosend.png)  
+  <img width="1401" height="842" alt="image" src="https://github.com/user-attachments/assets/198fa4df-fbea-4e71-ad04-ef50e116eed8" />
+
 
 - **Xuất CSV và mở bằng Excel**  
-  ![CSV Screenshot](docs/ui_csv.png)  
+  <img width="673" height="502" alt="image" src="https://github.com/user-attachments/assets/e9ed8581-0605-4a64-8b62-775622647998" />
+ 
 
 ---
 
