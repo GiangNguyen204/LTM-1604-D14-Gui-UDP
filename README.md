@@ -23,6 +23,8 @@
 
 ## 📖 1. Giới thiệu hệ thống
 Đề tài xây dựng ứng dụng **gửi và nhận tin nhắn broadcast qua giao thức UDP** trong mạng LAN.  
+<img width="717" height="689" alt="image" src="https://github.com/user-attachments/assets/2a7d4e8a-a4b7-4aa4-8c75-6132402027b8" />
+
 Ứng dụng có các tính năng chính:
 - Gửi tin nhắn một lần hoặc theo chế độ **Auto Send** (tự động định kỳ).  
 - **Lắng nghe (Listen)** trên cổng UDP để nhận broadcast từ nhiều máy khác nhau.  
