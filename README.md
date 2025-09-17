@@ -76,10 +76,10 @@
 ---
 
 ## 📖 5. Liên hệ
-- 📧 Email: **your_email@example.com**  
-- 📞 SĐT: **0123 456 789**  
-- 🌐 Website/FB: *(bạn thêm sau nếu có)*  
+- 📧 Email: **giangnguyen27112k4@gmail.com**  
+- 📞 SĐT: **0353397306**  
+- 🌐 Website/FB: **https://www.facebook.com/jannguyen04**  
 
 ---
 
-✍️ *README này được thiết kế để thầy/cô và người dùng hiểu nhanh về hệ thống, có ảnh minh họa, và hướng dẫn cài đặt rõ ràng.*
+✍️ *README này được thiết kế bởi Giang Nguyen*
