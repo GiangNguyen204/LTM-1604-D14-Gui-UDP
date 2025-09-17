@@ -88,11 +88,9 @@
 ---
 
 ## 📖 5. Liên hệ
-<p align="center">
-    <strong>Email:</strong> giangnguyen27112k4@gmail.com<br/>
-    <strong>Điện thoại:</strong> 0353397306<br/>
-    <strong>Website/FB:</strong> <a href="https://www.facebook.com/jannguyen04">https://www.facebook.com/jannguyen04</a>
-</p>
+- 📧 Email: **your_email@example.com**  
+- 📞 SĐT: **0123 456 789**  
+- 🌐 Website/FB: *(bạn thêm sau nếu có)*  
 
 ---
 
