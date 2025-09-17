@@ -39,7 +39,7 @@
 
 ---
 
-## 📖 2. Công nghệ sử dụng
+## ⚙️ 2. Công nghệ sử dụng
 Ứng dụng được phát triển bằng:
 - **Ngôn ngữ lập trình**: <a href="https://www.oracle.com/java/"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"></a>
 - **Thư viện UI**: <a href="https://docs.oracle.com/javase/tutorial/uiswing/"><img src="https://img.shields.io/badge/Java%20Swing-007396?style=for-the-badge&logo=java&logoColor=white" alt="Swing"></a>
@@ -51,7 +51,7 @@
 
 ---
 
-## 📖 3. Một số hình ảnh hệ thống 
+## 🖼️ 3. Một số hình ảnh hệ thống 
 
 <p align="center">
     <em>Giao diện chính ứng dụng</em><br/>
@@ -70,7 +70,7 @@
 
 ---
 
-## 📖 4. Các bước cài đặt
+## 🛠️ 4. Các bước cài đặt
 1. **Clone source code**  
    ```bash
    git clone https://github.com/yourusername/broadcastUDP.git
@@ -87,7 +87,7 @@
 
 ---
 
-## 📖 5. Liên hệ
+## 📞 5. Liên hệ
 - 📧 Email: **your_email@example.com**  
 - 📞 SĐT: **0123 456 789**  
 - 🌐 Website/FB: *(bạn thêm sau nếu có)*  
