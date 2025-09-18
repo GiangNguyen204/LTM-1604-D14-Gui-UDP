@@ -61,7 +61,7 @@ Tính năng chính:
 
 ## 🛠️ 4. Các bước cài đặt
 [![Step1](https://img.shields.io/badge/1-Clone%20source%20code-blue?style=for-the-badge)]()  
-git clone https://github.com/yourusername/broadcastUDP.git
+git clone [https://github.com/yourusername/broadcastUDP.git](https://github.com/GiangNguyen204/LTM-1604-D14-Gui-UDP.git)
 
 ---
 
