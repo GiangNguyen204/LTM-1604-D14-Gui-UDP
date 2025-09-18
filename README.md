@@ -88,9 +88,9 @@
 ---
 
 ## 📞 5. Liên hệ
-- 📧 Email: **your_email@example.com**  
-- 📞 SĐT: **0123 456 789**  
-- 🌐 Website/FB: *(bạn thêm sau nếu có)*  
+- 📧 Email: **giangnguyen27112k4@gmail.com**  
+- 📞 SĐT: **0353397306**  
+- 🌐 Website/FB: **https://www.facebook.com/jannguyen04**
 
 ---
 
