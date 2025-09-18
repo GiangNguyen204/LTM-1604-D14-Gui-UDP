@@ -25,68 +25,43 @@
 
 ---
 
-## 📖 1. Giới thiệu hệ thống
-Đề tài xây dựng ứng dụng **gửi và nhận tin nhắn broadcast qua giao thức UDP** trong mạng LAN.
+## 1. Giới thiệu hệ thống
+Đề tài xây dựng ứng dụng truyền tin nhắn broadcast qua giao thức UDP trong mạng LAN, gồm 2 ứng dụng client riêng biệt: 
+- UDP Sender (gửi) 
+- UDP Receiver (nhận). 
 
-<p align="center">
-    <img width="717" height="689" alt="Kiến trúc tổng quan" src="https://github.com/user-attachments/assets/2a7d4e8a-a4b7-4aa4-8c75-6132402027b8" />
-</p>
-
-Ứng dụng có các tính năng chính:
-- Gửi tin nhắn một lần hoặc theo chế độ **Auto Send** (tự động định kỳ).  
-- **Lắng nghe (Listen)** trên cổng UDP để nhận broadcast từ nhiều máy khác nhau.  
-- Hiển thị log chi tiết gồm: **Thời gian, IP nguồn, Cổng nguồn, Nội dung tin nhắn**.  
-- Lưu lại **lịch sử tin nhắn đã gửi** và cho phép chọn lại nhanh.  
-- Xuất log ra file **CSV** để phân tích bằng Excel.  
-- Giao diện **mềm mại, hiện đại** nhờ áp dụng theme Nimbus + bo góc (SoftUI).  
+Tính năng chính: 
+- Sender gửi 1 lần hoặc Auto Send (định kỳ) và lưu lịch sử. 
+- Receiver lắng nghe trên cổng UDP, hiển thị log (Time, Remote IP, Port, Message) và xuất CSV. 
+- Giao diện hiện đại (Nimbus + SoftUI bo góc).
 
 ---
 
 ## ⚙️ 2. Công nghệ sử dụng
 Ứng dụng được phát triển bằng:
-- **Ngôn ngữ lập trình**: <a href="https://www.oracle.com/java/"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"></a>
-- **Thư viện UI**: <a href="https://docs.oracle.com/javase/tutorial/uiswing/"><img src="https://img.shields.io/badge/Java%20Swing-007396?style=for-the-badge&logo=java&logoColor=white" alt="Swing"></a>
-- **JDK**: <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html"><img src="https://img.shields.io/badge/JDK-8+-green?style=for-the-badge&logo=java&logoColor=white" alt="JDK"></a>
 
-- **Mô hình kiến trúc**: tách lớp rõ ràng:
-  - `UDP`: core xử lý mạng (Sender, Receiver, NetUtils, Config).  
-  - `Client`: giao diện người dùng (BroadcastUI, SoftUI, ReceiverService, HistoryStore).  
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)  
+[![Swing](https://img.shields.io/badge/Java%20Swing-007396?style=for-the-badge&logo=java&logoColor=white)](https://docs.oracle.com/javase/tutorial/uiswing/)  
+[![JDK](https://img.shields.io/badge/JDK-8+-green?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)  
 
 ---
 
-## 🖼️ 3. Một số hình ảnh hệ thống 
+## 3. Một số hình ảnh hệ thống
+- UI UDP Sender.
+  <img width="850" height="476" alt="image" src="https://github.com/user-attachments/assets/5797ec8c-f2e2-4a9e-bfd9-d6adc2b6e136" />
 
-<p align="center">
-    <em>Giao diện chính ứng dụng</em><br/>
-    <img width="1387" height="819" alt="UI Main" src="https://github.com/user-attachments/assets/ce78f8ff-ea3c-49ab-9305-12ced8e4799e" />
-</p>
+- UI UDP Receiver.
+  <img width="979" height="565" alt="image" src="https://github.com/user-attachments/assets/b54ecd25-0405-40e6-986b-a0a32ee4f4c7" />
 
-<p align="center">
-    <em>Chế độ Auto Send + Log hiển thị</em><br/>
-    <img width="1401" height="842" alt="Auto Send" src="https://github.com/user-attachments/assets/198fa4df-fbea-4e71-ad04-ef50e116eed8" />
-</p>
+- Xuất CSV từ Receiver và mở bằng Excel. 
+<img width="673" height="502" alt="image" src="https://github.com/user-attachments/assets/c10f5968-0fda-4c4c-b6bb-92e00c7ab8c3" />
 
-<p align="center">
-    <em>Xuất CSV và mở bằng Excel</em><br/>
-    <img width="673" height="502" alt="CSV Export" src="https://github.com/user-attachments/assets/e9ed8581-0605-4a64-8b62-775622647998" />
-</p>
 
 ---
 
 ## 🛠️ 4. Các bước cài đặt
-1. **Clone source code**  
-   ```bash
-   git clone https://github.com/yourusername/broadcastUDP.git
-   ```
-2. **Mở project trong IDE** (Eclipse / IntelliJ).  
-3. **Cấu hình JDK**: chọn JDK 8 hoặc cao hơn.  
-4. **Chạy ứng dụng**:
-   - Mở class `Client.BroadcastUI` → Run As → Java Application.  
-   - Bấm **Start Listen** để bật chế độ lắng nghe.  
-   - Bấm **Send** hoặc bật **Auto Send** để gửi broadcast.  
-5. **Kiểm thử trên nhiều máy**:
-   - Đảm bảo các máy cùng mạng LAN (cùng subnet).  
-   - Bật Listen trên 1 máy, gửi từ máy khác → log sẽ hiển thị.  
+[![Step1](https://img.shields.io/badge/1-Clone%20source%20code-blue?style=for-the-badge)]()  
+git clone https://github.com/yourusername/broadcastUDP.git
 
 ---
 
