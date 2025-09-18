@@ -47,22 +47,25 @@ Tính năng chính:
 ---
 
 ## 3. Một số hình ảnh hệ thống
-- UI UDP Sender.
-  <img width="850" height="476" alt="image" src="https://github.com/user-attachments/assets/5797ec8c-f2e2-4a9e-bfd9-d6adc2b6e136" />
+<p align="center">
+    <em>UI UDP Sender</em><br/>
+    <img width="850" height="476" alt="UI Sender" src="https://github.com/user-attachments/assets/5797ec8c-f2e2-4a9e-bfd9-d6adc2b6e136" />
+</p>
 
-- UI UDP Receiver.
-  <img width="979" height="565" alt="image" src="https://github.com/user-attachments/assets/b54ecd25-0405-40e6-986b-a0a32ee4f4c7" />
+<p align="center">
+    <em>UI UDP Receiver</em><br/>
+    <img width="979" height="565" alt="UI Receiver" src="https://github.com/user-attachments/assets/b54ecd25-0405-40e6-986b-a0a32ee4f4c7" />
+</p>
 
-- Xuất CSV từ Receiver và mở bằng Excel. 
-<img width="673" height="502" alt="image" src="https://github.com/user-attachments/assets/c10f5968-0fda-4c4c-b6bb-92e00c7ab8c3" />
-
+<p align="center">
+    <em>Xuất CSV từ Receiver và mở bằng Excel</em><br/>
+    <img width="673" height="502" alt="CSV Export" src="https://github.com/user-attachments/assets/c10f5968-0fda-4c4c-b6bb-92e00c7ab8c3" />
+</p>
 
 ---
 
 ## 🛠️ 4. Các bước cài đặt
 [![Step1](https://img.shields.io/badge/1-Clone%20source%20code-blue?style=for-the-badge)]()  
-git clone [https://github.com/yourusername/broadcastUDP.git](https://github.com/GiangNguyen204/LTM-1604-D14-Gui-UDP.git)
-
 ---
 
 ## 📞 5. Liên hệ
