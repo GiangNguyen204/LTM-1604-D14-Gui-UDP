@@ -65,8 +65,80 @@ Tính năng chính:
 ---
 
 ## 🛠️ 4. Các bước cài đặt
-[![Step1](https://img.shields.io/badge/1-Clone%20source%20code-blue?style=for-the-badge)]()  
----
+🎮 LTM-1604-D14-Gui-UDP 
+
+Dự án Gửi tin nhắn Broadcast qua UDP
+README này hướng dẫn cài đặt và chạy ứng dụng.
+
+------------------------------------------------------------------------
+
+🛠️ 4.1. Yêu cầu hệ thống
+
+  -----------------------------------------------------------------------
+  Thành phần       Yêu cầu
+  ---------------- ------------------------------------------------------
+  ☕ Java JDK      Phiên bản 8+ (khuyến nghị JDK 11 hoặc 17, JDK 21 vẫn
+                   tương thích)
+
+  💻 Hệ điều hành  Windows
+         
+
+  💾 Bộ nhớ        ≥ 4GB RAM, dung lượng trống tối thiểu 500MB
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+📥 4.2. Các bước cài đặt
+
+🧰 Bước 1: Chuẩn bị môi trường
+
+1.  Cài đặt Java JDK
+
+    -   Yêu cầu JDK 8 trở lên (khuyến nghị JDK 11/17).
+
+    -   Kiểm tra cài đặt:
+
+            java -version
+            javac -version
+
+        Nếu cả hai lệnh hiển thị version ≥ 8 là hợp lệ.
+
+2.  Cấu trúc thư mục dự án
+
+        └── src/
+            ├── Client/   
+            └── UDP/
+            ├── ClientSender/   
+            └── ClientReceiver/   
+
+------------------------------------------------------------------------
+
+🏗 Bước 2: Biên dịch mã nguồn
+
+Mở Terminal/Command Prompt và điều hướng đến thư mục dự án:
+
+    cd D:\Download\LTM-1604-D14-Gui-UDP
+
+------------------------------------------------------------------------
+
+▶️ Bước 3: Chạy ứng dụng
+
+1️⃣ Khởi động Server
+
+Chạy lệnh:
+-   Chọn SenderMain.java chuột phải chọn RunAs
+
+-   Server mặc định chạy trên port 5005 (có thể chỉnh trong code).
+
+
+2️⃣ Khởi động Client
+
+Mở một terminal mới và chạy:
+
+-    Chọn RêciverMain.java chuột phải chọn RunAs
+
+------------------------------------------------------------------------
+
 
 ## 📞 5. Liên hệ
 - 📧 Email: **giangnguyen27112k4@gmail.com**  
