@@ -5,30 +5,20 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public final class NetUtils {
-    private NetUtils() {}
-
-    public static List<InetAddress> getBroadcastAddresses() throws SocketException {
+public class NetUtils {
+    public static List<InetAddress> listAllBroadcastAddresses() throws SocketException, UnknownHostException {
         List<InetAddress> result = new ArrayList<>();
         Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-
         while (interfaces.hasMoreElements()) {
             NetworkInterface ni = interfaces.nextElement();
             if (!ni.isUp() || ni.isLoopback() || ni.isPointToPoint()) continue;
-
             for (InterfaceAddress ia : ni.getInterfaceAddresses()) {
-                InetAddress broadcast = ia.getBroadcast();
-                if (broadcast != null) {
-                    result.add(broadcast);
-                }
+                InetAddress b = ia.getBroadcast();
+                if (b != null) result.add(b);
             }
         }
-
-        // thêm broadcast toàn cục
-        try {
-            result.add(InetAddress.getByName("255.255.255.255"));
-        } catch (Exception ignored) {}
-
+        // thêm global broadcast
+        result.add(InetAddress.getByName("255.255.255.255"));
         return result;
     }
 }

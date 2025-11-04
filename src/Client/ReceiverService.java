@@ -3,14 +3,21 @@ package Client;
 import UDP.Config;
 import UDP.MessageEvent;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
-import java.time.LocalDateTime;
+import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * ReceiverService (updated)
+ * - Đóng dấu thời gian đầy đủ: yyyy-MM-dd HH:mm:ss.SSS
+ * - Dùng hằng cục bộ BUF_SIZE thay vì Config.BUFFER_SIZE để tránh lỗi compile.
+ */
 public class ReceiverService implements Runnable {
 
     public interface Listener {
@@ -19,65 +26,70 @@ public class ReceiverService implements Runnable {
         void onError(String text, Exception ex);
     }
 
+    private static final int BUF_SIZE = 8192; // <--- kích thước buffer cục bộ
+
     private final Listener listener;
+    private Thread thread;
     private final AtomicBoolean running = new AtomicBoolean(false);
-    private Thread worker;
+
+    // Định dạng NGÀY + GIỜ (milli)
+    private static final DateTimeFormatter TIME_FMT =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
     public ReceiverService(Listener listener) {
         this.listener = listener;
     }
 
-    public synchronized void start() {
-        if (running.get()) return;
-        running.set(true);
-        worker = new Thread(this, "UDP-Receiver-Thread");
-        worker.setDaemon(true);
-        worker.start();
+    public void start() {
+        if (running.compareAndSet(false, true)) {
+            thread = new Thread(this, "udp-receiver");
+            thread.setDaemon(true);
+            thread.start();
+            if (listener != null) listener.onStatus("Starting...");
+        }
     }
 
-    public synchronized void stop() {
+    public void stop() {
         running.set(false);
-        // có thể tạo một “tickle” socket gửi 1 byte để un-block receive nếu cần
+        if (thread != null) {
+            try { thread.interrupt(); } catch (Exception ignore) {}
+            thread = null;
+        }
+        if (listener != null) listener.onStatus("Stopped.");
     }
 
     @Override
     public void run() {
-        listener.onStatus("Starting receiver on port " + Config.PORT + " ...");
-        try (DatagramSocket socket = new DatagramSocket(null)) {
+        try (DatagramSocket socket = new DatagramSocket(new InetSocketAddress(Config.PORT))) {
             socket.setReuseAddress(true);
-            socket.bind(new InetSocketAddress(Config.PORT));
-            listener.onStatus("Listening UDP broadcast on port " + Config.PORT);
+            if (listener != null) listener.onStatus("Listening UDP broadcast on port " + Config.PORT);
 
-            byte[] buf = new byte[Config.MAX_PACKET_SIZE];
-            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+            byte[] buf = new byte[BUF_SIZE];                       // <--- dùng hằng cục bộ
+            DatagramPacket packet = new DatagramPacket(buf, buf.length);
 
             while (running.get()) {
-                DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 socket.receive(packet);
 
-                byte[] payload = Arrays.copyOfRange(packet.getData(), packet.getOffset(),
-                        packet.getOffset() + packet.getLength());
-                String msg = new String(payload, Config.CHARSET);
+                String msg = new String(packet.getData(), packet.getOffset(), packet.getLength(), StandardCharsets.UTF_8);
+                String ip  = packet.getAddress().getHostAddress();
+                int port   = packet.getPort();
 
-                String timeText = LocalDateTime.now().format(fmt);
-                MessageEvent ev = new MessageEvent(
-                        System.nanoTime(), timeText,
-                        packet.getAddress().getHostAddress(), packet.getPort(), msg
-                );
-                listener.onMessage(ev);
+                String timeText = TIME_FMT.format(Instant.now().atZone(ZoneId.systemDefault()));
+
+                if (listener != null) {
+                    listener.onMessage(new MessageEvent(timeText, ip, port, msg));
+                }
+            }
+        } catch (IOException ex) {
+            if (running.get()) {
+                if (listener != null) listener.onError("Receive error", ex);
+            } else {
+                if (listener != null) listener.onStatus("Stopped.");
             }
         } catch (Exception ex) {
-            if (running.get()) {
-                listener.onError("Receiver stopped with error", ex);
-            } else {
-                listener.onStatus("Receiver stopped.");
-            }
+            if (listener != null) listener.onError("Unexpected error", ex);
         } finally {
             running.set(false);
         }
-    }
-
-    public boolean isRunning() {
-        return running.get();
     }
 }
