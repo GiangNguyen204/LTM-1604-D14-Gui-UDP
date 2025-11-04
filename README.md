@@ -49,12 +49,15 @@ Tính năng chính:
 ## 3. Một số hình ảnh hệ thống
 <p align="center">
     <em>UI UDP Sender</em><br/>
-    <img width="850" height="476" alt="UI Sender" src="https://github.com/user-attachments/assets/5797ec8c-f2e2-4a9e-bfd9-d6adc2b6e136" />
+    <img width="1110" height="740" alt="image" src="https://github.com/user-attachments/assets/e824f6bf-4d30-4ef0-9738-09547ca4a958" />
+
+" />
 </p>
 
 <p align="center">
     <em>UI UDP Receiver</em><br/>
-    <img width="979" height="565" alt="UI Receiver" src="https://github.com/user-attachments/assets/b54ecd25-0405-40e6-986b-a0a32ee4f4c7" />
+    <img width="1209" height="791" alt="image" src="https://github.com/user-attachments/assets/2091c302-0832-440e-8856-76fed214266c" />
+
 </p>
 
 <p align="center">
